@@ -20,4 +20,8 @@ class DescriptionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func back() {
+        dismiss(animated: true, completion: nil)
+    }
 }
