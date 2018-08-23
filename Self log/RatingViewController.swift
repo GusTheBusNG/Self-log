@@ -62,6 +62,11 @@ class ViewController: UIViewController {
         
         do {
             try managedContext.save()
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DescriptionViewController") as UIViewController
+            self.present(nextViewController, animated:true, completion:nil)
         } catch let error as NSError {
             print("Could not save rating value. \(error), \(error.userInfo)")
         }
