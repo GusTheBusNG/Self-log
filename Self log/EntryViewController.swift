@@ -14,7 +14,16 @@ class ViewController: UIViewController {
     var currentValue: Int = 10
     
     @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var sliderLabel: UILabel! 
+    @IBOutlet weak var sliderLabel: UILabel!
+    
+    var entryTitle = ""
+    var entryDescription = ""
+    
+    @IBOutlet weak var descriptionPageLabel: UILabel!
+    @IBOutlet weak var entryTitleField: UITextField!
+    @IBOutlet weak var entryDescriptionField: UITextView!
+    
+    @IBOutlet weak var categoriePicker: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +55,15 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func goToDescriptionPage() {
+        descriptionPageLabel.text = "Please describe what you are doing and why you maked it as a \(currentValue)/10 experience."
+    }
+    
+    @IBAction func goToCategoryPage() {
+        entryTitle = entryTitleField.text!
+        entryDescription = entryDescriptionField.text
+    }
+    
     @IBAction func saveButtonPressed() {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -54,11 +72,13 @@ class ViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "Rating", in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: "Entry", in: managedContext)!
         
         let rating = NSManagedObject(entity: entity, insertInto: managedContext)
         
         rating.setValue(currentValue, forKeyPath: "score")
+        rating.setValue(entryTitle, forKey: "title")
+        rating.setValue(entryDescription, forKey: "entryDescription")
         
         do {
             try managedContext.save()

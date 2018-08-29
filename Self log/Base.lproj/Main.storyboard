@@ -94,7 +94,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="3"/>
@@ -107,7 +107,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToDescriptionPage" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fb-fM-pkF"/>
                                     <action selector="saveButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gm-pm-I9J"/>
+                                    <segue destination="Fkc-WH-ZCB" kind="presentation" id="lIR-Em-cIK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -123,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
-        <!--Description View Controller-->
+        <!--View Controller-->
         <scene sceneID="7Oz-O6-YKs">
             <objects>
-                <viewController storyboardIdentifier="DescriptionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fkc-WH-ZCB" customClass="DescriptionViewController" customModule="Self_log" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DescriptionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fkc-WH-ZCB" customClass="ViewController" customModule="Self_log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqT-vv-pyp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,15 +140,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I want to continue doing this for the rest of my life! 😁" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-mW-GcC">
-                                <rect key="frame" x="52" y="148" width="270" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.39010945429999999" green="0.39010945429999999" blue="0.39010945429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-PZ-Vy5">
-                                <rect key="frame" x="38" y="227" width="299" height="30"/>
+                                <rect key="frame" x="38" y="165" width="299" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.39010945429999999" green="0.39010945429999999" blue="0.39010945429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -163,25 +158,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Um9-Oz-tWf">
-                                <rect key="frame" x="38" y="278" width="299" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" red="0.39010945429999999" green="0.39010945429999999" blue="0.39010945429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.39010945429999999" green="0.39010945429999999" blue="0.39010945429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKA-3e-6S7">
                                 <rect key="frame" x="70" y="482" width="235" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -210,7 +186,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="3"/>
@@ -223,13 +199,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="goToCategoryPage" destination="Fkc-WH-ZCB" eventType="touchUpInside" id="ge9-cB-oEm"/>
                                     <segue destination="qGa-AT-OWi" kind="presentation" id="DTS-7r-Ef0"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Um9-Oz-tWf">
+                                <rect key="frame" x="38" y="235" width="299" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.39010945429999999" green="0.39010945429999999" blue="0.39010945429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.39010945429999999" green="0.39010945429999999" blue="0.39010945429999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.96363209350000001" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="66n-p4-Yhi"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionPageLabel" destination="EZH-E9-CNR" id="tEH-m1-oMe"/>
+                        <outlet property="entryDescription" destination="Um9-Oz-tWf" id="PI3-5c-ySX"/>
+                        <outlet property="entryTitle" destination="A7s-PZ-Vy5" id="vfc-VU-bG5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mn2-1n-kq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,7 +239,7 @@
         <!--View Controller-->
         <scene sceneID="eny-3b-FHO">
             <objects>
-                <viewController id="qGa-AT-OWi" sceneMemberID="viewController">
+                <viewController id="qGa-AT-OWi" customClass="ViewController" customModule="Self_log" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3tc-Jg-JNw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,11 +322,17 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonPressed" destination="qGa-AT-OWi" eventType="touchUpInside" id="THh-pe-HBR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.96363209350000001" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="TXt-nK-R0c"/>
                     </view>
+                    <connections>
+                        <outlet property="categoriePicker" destination="xHO-LU-ufX" id="kq4-xh-K1e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBF-ZU-Ak4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
